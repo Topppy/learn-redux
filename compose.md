@@ -48,11 +48,11 @@ if there is only one function is passing in, just return it.
 ```
 const last = funcs[funcs.length - 1]
 ```
-Save the last function in Array funcs as varibvle ```last```.
+Save the last function in Array funcs as variable ```last```.
 ```
 const rest = funcs.slice(0, -1)
 ```
-Save the rest functions except the last one as varibvle ```rest```.
+Save the rest functions except the last one as variable ```rest```.
 ```
 return (...args) => rest.reduceRight((composed, f) => f(composed), last(...args))
 ```
@@ -64,4 +64,4 @@ return function (...args){
   }, last(...args))
 }
 ```
-it return a function accepted arguments as normal which is easy to use.Inside this returned function, it pass in the arguments to functions in Array *funcs* in the order from right to left.For example, if ```funcs = [a,b,c]```, it returns a compound function ```a(b(c(args)))``` 
+It returns a function accepted arguments as normal which is easy to use.Inside this returned function, arguments are passed in functions of Array *funcs* in the order from right to left.For example, if ```funcs = [a,b,c]```, it returns a compound function ```a(b(c(args)))``` 
