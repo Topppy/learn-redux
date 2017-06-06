@@ -35,7 +35,7 @@ if (typeof enhancer !== 'undefined') {
     return enhancer(createStore)(reducer, preloadedState)
   }
 ```
-if enhancee passed in isn't a *Function*, tell the user "Error". when the enhancer function is correctly passed in (> The only store enhancer that ships with Redux is `applyMiddleware()`.)
+if enhancee passed in isn't a *Function*, tell the user "Error". when the enhancer function is correctly passed in (*The only store enhancer that ships with Redux is `applyMiddleware()`.*)
 
 
 
