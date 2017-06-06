@@ -1,4 +1,5 @@
 # learn-redux
-This is a learning notes of redux to improve myself.
+This is a learning notes about the source code of redux.
 
 * [compose](./compose.md)
+* [createStore](./createStore.md)
