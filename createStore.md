@@ -39,13 +39,58 @@ if (typeof enhancer !== 'undefined') {
     return enhancer(createStore)(reducer, preloadedState)
   }
 ```
-if enhancee passed in isn't a *Function*, tell the user "Error". when the enhancer function is correctly passed in (*The only store enhancer that ships with Redux is `applyMiddleware()`.*).So, we can use `applyMiddleware()` in such a way :`applyMiddleware(createStore)(reducer, preloadedState)`.
+if enhancer passed in isn't *Function*, tell the user "Error". when the enhancer function is correctly passed in (*The only store enhancer that ships with Redux is `applyMiddleware()`.*), give all the things to enhancer.Also, we can use `applyMiddleware()` in such a way :`applyMiddleware(createStore)(reducer, preloadedState)`.
+```
+if (typeof reducer !== 'function') {
+    throw new Error('Expected the reducer to be a function.')
+  }
+```
+Make sure reducer is function.
+```
+  var currentReducer = reducer
+  var currentState = preloadedState
+  var currentListeners = []
+  var nextListeners = currentListeners
+  var isDispatching = false
+  
+  function ensureCanMutateNextListeners() {
+    if (nextListeners === currentListeners) {
+      nextListeners = currentListeners.slice()
+    }
+  }
+```
+*ensureCanMutateNextListeners* ensure nextListeners and curretListeners different.
+```
+function getState() {
+    return currentState
+  }
+```
+Getter of store ,return the current state tree.
 
+```
+  function subscribe(listener) {
+    if (typeof listener !== 'function') {
+      throw new Error('Expected listener to be a function.')
+    }
 
+    var isSubscribed = true
 
+    ensureCanMutateNextListeners()
+    nextListeners.push(listener)
 
+    return function unsubscribe() {
+      if (!isSubscribed) {
+        return
+      }
 
+      isSubscribed = false
 
+      ensureCanMutateNextListeners()
+      var index = nextListeners.indexOf(listener)
+      nextListeners.splice(index, 1)
+    }
+  }
+  ```
 
 
 
