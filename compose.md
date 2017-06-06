@@ -56,7 +56,7 @@ Save the rest functions except the last one as varibvle ```rest```.
 ```
 return (...args) => rest.reduceRight((composed, f) => f(composed), last(...args))
 ```
-Here is importent code in this module.it may looks a little hard to understand for those who is unfamiliar to ES6,we transform them to ES5.
+Here is the importent code in this module.it may looks a little hard to understand for those who is unfamiliar to ES6,we transform them to ES5.
 ```
 return function (...args){
   return rest.reduceRight(function(composed,f){
@@ -64,5 +64,4 @@ return function (...args){
   }, last(...args))
 }
 ```
-
-
+it return a function accepted arguments as normal which is easy to use.Inside this returned function, it pass in the arguments to functions in Array *funcs* in the order from right to left.For example, if ```funcs = [a,b,c]```, it returns a compound function ```a(b(c(args)))``` 
