@@ -25,11 +25,11 @@ export default function compose(...funcs) {
   return (...args) => rest.reduceRight((composed, f) => f(composed), last(...args))
 }
 ```
-## How it work
+## What it is doing
 ```
 export default function compose(...funcs) {
 ```
-Several es6 features is used in this line , it means a function named *compose* exported as default function from this module. you can import the *compose* function in other mudules by ```import compose from './compose'``` which you find in file ```redux/src/applyMiddleware.js```. The expression in brackets after function name *compose* using another new feature: *rest Parameters*, a list of parameters we dont kown how many are they are passed in this function, we can get them in Array ```funcs```.
+Several es6 features is used in this line , it means a function named *compose* exported as default function from this module. you can import the *compose* function in other mudules by ```import compose from './compose'``` which you find in file ```redux/src/applyMiddleware.js```. The expression in brackets after function name *compose* using another new feature: *rest Parameters*, an amount of arguments we dont kown how many they are is passed in this function, we can get them in Array ```funcs```.
 
 ```
 if (funcs.length === 0) {
