@@ -49,3 +49,4 @@ export default function bindActionCreators(actionCreators, dispatch) {
 }
 
 ```
+As we learned before in comose.md function bindActionCreator equals to '''bindActionCreator = compose(actionCreator, dispatch)'''.
