@@ -61,3 +61,5 @@ or
 ```
 actionCreatorFunc
 ```
+
+any other types of value of actionCreators except *function* will be ignored.
