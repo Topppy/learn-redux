@@ -49,4 +49,4 @@ export default function bindActionCreators(actionCreators, dispatch) {
 }
 
 ```
-As we learned before in compose.md function bindActionCreator equals to '''bindActionCreator = compose(actionCreator, dispatch)'''.
+As we learned before in compose.md function bindActionCreator equals to '''bindActionCreator = compose(dispatch, actionCreator)'''.
