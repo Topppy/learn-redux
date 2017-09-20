@@ -1,3 +1,5 @@
+This file is a simple implementation of Observer Pattern
+
 ```
 import isPlainObject from 'lodash/isPlainObject'
 ```
@@ -14,7 +16,7 @@ export var ActionTypes = {
   INIT: '@@redux/INIT'
 }
 ```
-ActionTypes is a 'action' in redux. it is used at the end of function **createStore**.
+ActionTypes is type list contains the only type '@@redux/INIT'. it is used at the end of function **createStore**.
 
 
 
