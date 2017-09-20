@@ -50,3 +50,14 @@ export default function bindActionCreators(actionCreators, dispatch) {
 
 ```
 As we learned before in compose.md function bindActionCreator equals to '''bindActionCreator = compose(dispatch, actionCreator)'''.
+
+actionCreators should be 
+```
+{
+  actionCreatorFunc1,actionCreatorFunc2,actionCreatorFunc3,...
+}
+```
+or
+```
+actionCreatorFunc
+```
