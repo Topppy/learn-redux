@@ -1,7 +1,19 @@
 # learn-redux
-This is a learning notes about the source code of redux.
+This is a learning notes about the source code of redux, redux-thunk, react-redux.
 
-* [compose](./compose.md)
-* [createStore](./createStore.md)
-* [applyMiddleware](./applyMiddleware.md)
-* [bindActionCreators](./bindActionCreators.md)
+## redux
+
+* [compose](./redux/compose.md)
+* [createStore](./redux/createStore.md)
+* [applyMiddleware](./redux/applyMiddleware.md)
+* [bindActionCreators](./redux/bindActionCreators.md)
+
+## redux-thunk
+
+* [thunk](./redux/thunk.md)
+
+## react-redux
+
+* connect
+
+![](./react-redux/react-redux-connect.svg)
