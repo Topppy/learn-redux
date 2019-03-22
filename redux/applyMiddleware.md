@@ -37,7 +37,7 @@ export default function applyMiddleware(...middlewares) {
   }
 }
 ```
-Function applyMiddleware accepts a list of middlewares in type of Array. The output of Function applyMiddleware is a function which need the parameter 'createStore' and return a Store like object as returned by function CreateStore, with a enhanced dispatch method.
+Function applyMiddleware accepts a list of middlewares in type of Function. The output of Function applyMiddleware is a function which need the parameter 'createStore' and return a Store like object as returned by function CreateStore, with a enhanced dispatch method.
 > each middleware will be given the `dispatch` and `getState` functions as named arguments middlewareAPI.
 
 The new enhanced dispatch is got by compose those middlewares given the orign store.dispatch.
